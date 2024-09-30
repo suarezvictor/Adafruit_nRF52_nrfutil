@@ -37,12 +37,13 @@ import hashlib
 
 
 # Nordic libraries
-from nordicsemi.exceptions import NordicSemiException
-from nordicsemi.dfu.nrfhex import *
-from nordicsemi.dfu.init_packet import *
-from nordicsemi.dfu.manifest import ManifestGenerator, Manifest
-from nordicsemi.dfu.model import HexType, FirmwareKeys
-from nordicsemi.dfu.crc16 import *
+from dfu.exceptions import NordicSemiException
+
+from dfu.nrfhex import *
+from dfu.init_packet import *
+from dfu.manifest import ManifestGenerator, Manifest
+from dfu.model import HexType, FirmwareKeys
+from dfu.crc16 import *
 
 from .signing import Signing
 

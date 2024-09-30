@@ -34,12 +34,13 @@ import logging
 from time import time, sleep
 from datetime import datetime, timedelta
 
+    
 # Nordic libraries
-from nordicsemi.exceptions import *
-from nordicsemi.dfu.package import Package
-from nordicsemi.dfu.dfu_transport import DfuEvent
-from nordicsemi.dfu.model import HexType
-from nordicsemi.dfu.manifest import SoftdeviceBootloaderFirmware
+from dfu.exceptions import NordicSemiException
+from dfu.package import Package
+from dfu.dfu_transport import DfuEvent
+from dfu.model import HexType
+from dfu.manifest import SoftdeviceBootloaderFirmware
 
 logger = logging.getLogger(__name__)
 

@@ -37,10 +37,10 @@ import click
 from serial import Serial
 
 # Nordic Semiconductor imports
-from nordicsemi.dfu.util import slip_parts_to_four_bytes, slip_encode_esc_chars, int16_to_bytes, int32_to_bytes
-from nordicsemi.dfu import crc16
-from nordicsemi.exceptions import NordicSemiException
-from nordicsemi.dfu.dfu_transport import DfuTransport, DfuEvent
+from dfu.util import slip_parts_to_four_bytes, slip_encode_esc_chars, int16_to_bytes, int32_to_bytes
+from dfu import crc16
+from dfu.exceptions import NordicSemiException
+from dfu.dfu_transport import DfuTransport, DfuEvent
 
 
 logger = logging.getLogger(__name__)

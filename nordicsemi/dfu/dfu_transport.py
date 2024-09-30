@@ -31,7 +31,7 @@ import abc
 import logging
 
 # Nordic Semiconductor imports
-from nordicsemi.dfu.util import int32_to_bytes
+from dfu.util import int32_to_bytes
 
 logger = logging.getLogger(__name__)
 

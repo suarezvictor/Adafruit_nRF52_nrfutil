@@ -18,7 +18,7 @@ try:
 except Exception:
     print("Failed to import ecdsa, cannot do signing")
 
-from nordicsemi.exceptions import InvalidArgumentException, IllegalStateException
+from dfu.exceptions import InvalidArgumentException, IllegalStateException
 
 
 class Signing(object):

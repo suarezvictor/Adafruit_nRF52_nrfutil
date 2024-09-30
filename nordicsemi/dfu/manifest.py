@@ -32,9 +32,9 @@ import binascii
 import os
 
 # Nordic libraries
-from nordicsemi.exceptions import NotImplementedException
-from nordicsemi.dfu.init_packet import PacketField
-from nordicsemi.dfu.model import HexType, FirmwareKeys
+from dfu.exceptions import NotImplementedException
+from dfu.init_packet import PacketField
+from dfu.model import HexType, FirmwareKeys
 
 
 class ManifestGenerator(object):

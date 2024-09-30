@@ -27,7 +27,7 @@
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # Nordic libraries
-from nordicsemi.exceptions import NordicSemiException
+from dfu.exceptions import NordicSemiException
 
 
 # TODO: Create query function that maps query-result strings with functions
