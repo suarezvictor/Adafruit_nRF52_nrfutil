@@ -31,7 +31,6 @@ import os
 import tempfile
 import shutil
 import logging
-from time import time, sleep
 from datetime import datetime, timedelta
 
     
@@ -135,7 +134,7 @@ class Dfu(object):
                 log_message = "Failed to open transport backend"
                 raise NordicSemiException(log_message)
 
-            sleep(0.1)
+            time.sleep(0.1)
 
 
     def _dfu_send_image(self, program_mode, firmware_manifest):
@@ -189,7 +188,7 @@ class Dfu(object):
         elif program_mode == HexType.APPLICATION:
             application_size = len(firmware)
 
-        start_time = time()
+        start_time = time.time()
         logger.info("Starting DFU upgrade of type %s, SoftDevice size: %s, bootloader size: %s, application size: %s",
                     program_mode,
                     softdevice_size,
@@ -213,9 +212,9 @@ class Dfu(object):
         self.dfu_transport.close()
 
         # logger.info("Wait after activating %s second", self.get_activate_wait_time())
-        sleep(self.dfu_transport.get_activate_wait_time())
+        time.sleep(self.dfu_transport.get_activate_wait_time())
 
-        end_time = time()
+        end_time = time.time()
         logger.info("\nDFU upgrade took {0}s".format(end_time - start_time))
 
     def dfu_send_images(self):

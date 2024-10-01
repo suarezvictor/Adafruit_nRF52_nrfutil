@@ -38,7 +38,7 @@ from serial import Serial
 
 # Nordic Semiconductor imports
 from dfu.util import slip_parts_to_four_bytes, slip_encode_esc_chars, int16_to_bytes, int32_to_bytes
-from dfu import crc16
+from dfu.crc16 import calc_crc16
 from dfu.exceptions import NordicSemiException
 from dfu.dfu_transport import DfuTransport, DfuEvent
 
@@ -350,7 +350,7 @@ class HciPacket(object):
         logger.debug("Add Data: %s", [hex(i) for i in temp_data])
         
         # Add escape characters
-        crc = crc16.calc_crc16(bytes(temp_data) , crc=0xffff)
+        crc = calc_crc16(bytes(temp_data) , crc=0xffff)
         logger.debug("CRC: %s", hex(crc))
         temp_data.append(crc & 0xFF)
         temp_data.append((crc & 0xFF00) >> 8)

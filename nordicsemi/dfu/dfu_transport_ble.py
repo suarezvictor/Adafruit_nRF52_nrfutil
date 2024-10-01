@@ -33,9 +33,9 @@ import abc
 import logging
 
 # Nordic libraries
-from nordicsemi.exceptions import NordicSemiException, IllegalStateException
-from nordicsemi.dfu.util import int16_to_bytes
-from nordicsemi.dfu.dfu_transport import DfuTransport, DfuEvent
+from dfu.exceptions import NordicSemiException, IllegalStateException
+from dfu.util import int16_to_bytes
+from dfu.dfu_transport import DfuTransport, DfuEvent
 
 logger = logging.getLogger(__name__)
 
