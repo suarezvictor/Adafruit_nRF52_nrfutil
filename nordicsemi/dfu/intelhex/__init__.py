@@ -41,20 +41,7 @@ from bisect import bisect_right
 import os
 import sys
 
-from .compat import (
-    IntTypes,
-    StrType,
-    StringIO,
-    array_tobytes,
-    asbytes,
-    asstr,
-    dict_items_g,
-    dict_keys,
-    dict_keys_g,
-    range_g,
-    range_l,
-    )
-
+from .compat import (IntTypes, StrType, StringIO, array_tobytes, asbytes, asstr, dict_items_g, dict_keys, dict_keys_g, range_g, range_l)
 from .getsizeof import total_size
 
 
@@ -809,7 +796,7 @@ class IntelHex(object):
             elif eip is None and cs is not None and ip is not None:
                 tofile.write('CS = 0x%04X, IP = 0x%04X\n' % (cs, ip))
             else:
-                tofile.write('start_addr = %r\n' % start_addr)
+                tofile.write('start_addr = %r\n' % self.start_addr)
         # actual data
         addresses = dict_keys(self._buf)
         if addresses:

@@ -5,10 +5,7 @@
 import sys
 from itertools import chain
 from collections import deque
-try:
-    from reprlib import repr
-except ImportError:
-    pass
+from reprlib import repr
 
 def total_size(o, handlers={}, verbose=False):
     """ Returns the approximate memory footprint an object and all of its contents.
